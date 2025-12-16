@@ -1,8 +1,10 @@
 // Kristoffer Sy Comp 482 Project 3
 // Personal Notes:
 // Analysis: Requires O(log(n)), NO MERGING. low1,low2,low3...high1,high2,high3 => Binary Search 
-// Input = kth index of merged arrays, length of arrays, sorted arrays => Binary Search
+// Input / Goal = kth index of merged arrays (one big array from 3 sorted Arrays), length of arrays, sorted arrays => Binary Search
 // Scan, count how many elements are <= mid value, adjust low/high accordingly until low == high
+// Find K-th value where mid value occurs and count Less or equal to K (mid = (min + max /2))
+// compare count with K+1, repeat until min = max
 
 import java.io.File;
 import java.io.FileNotFoundException;
