@@ -1,10 +1,17 @@
 // Kristoffer Sy Comp 482 Project 3
 // Personal Notes:
-// Analysis: Requires O(log(n)), NO MERGING. low1,low2,low3...high1,high2,high3 => Binary Search 
-// Input / Goal = kth index of merged arrays (one big array from 3 sorted Arrays), length of arrays, sorted arrays => Binary Search
-// Scan, count how many elements are <= mid value, adjust low/high accordingly until low == high
-// Find K-th value where mid value occurs and count Less or equal to K (mid = (min + max /2))
-// compare count with K+1, repeat until min = max
+// Similar to TwoExtremes Quiz Question, take min / max values of array and find position 
+// Goal: kth index of merged arrays (one big array from 3 sorted Arrays), length of arrays, sorted arrays => Binary Search
+// Analysis / Psudo: 
+// Let minValue = global minimum across all 3 lists ; maxValue = global maximum across all 3 lists.
+// desired index : k + 1
+// If minValue < maxValue
+//      - count total number of elements across all 3 lists that are <= midValue
+//      - If (count >= k + 1), k-th smallest value is <= midValue
+//          -> move  bounds for each => maxValue = midValue
+//        Else (count < k + 1), the k-th smallest value is > midValue
+//          -> move lower bound: minValue = midValue + 1
+// When (minValue == maxValue), that value is the k-th smallest.
 
 import java.io.File;
 import java.io.FileNotFoundException;
